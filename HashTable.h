@@ -63,7 +63,6 @@ HashTable<T, K>::HashTable(int _size)
 			{
 				arr[y].flag = empty;
 			}
-			return;
 		}
 	}
 }
