@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 #include <list>
-#include <vector>
 #include <algorithm>
 #include <cmath>
 using namespace std;
