@@ -50,7 +50,7 @@ void HSubject::print()const
 {   
 	cout << "All subjects and titles:\n";
 
-	//lets create a seperate vector to deal with sorting, reason for using vector is to give us someting with random access iterators for sort
+	//lets create a seperate vector to deal with sorting, reason for using vector is to give us something with random access iterators for sort
 	vector<Item<list<string>, string>> sorted;
 
 	//only push onto the vector the places that are full
