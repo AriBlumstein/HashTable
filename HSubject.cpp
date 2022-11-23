@@ -51,28 +51,28 @@ void HSubject::print()const
 	cout << "All subjects and titles:\n";
 
 	//lets create a seperate vector to deal with sorting, reason for using vector is to give us something with random access iterators for sort
-	vector<Item<list<string>, string>> sorted;
+	vector<Item<list<string>, string>*> sorted;
 
 	//only push onto the vector the places that are full
 	for (int x = 0; x < size; x++)
 	{
 		if (arr[x].flag == full)
 		{
-			sorted.push_back(arr[x]);
+			sorted.push_back(&arr[x]);
 		}
 	}
 
 	//let us use the sort alogorithm 
-	sort(sorted.begin(), sorted.end(), [](Item<list<string>, string>& first, Item<list<string>, string>& last)->bool {return first.key < last.key; });
+	sort(sorted.begin(), sorted.end(), [](Item<list<string>, string>*& first, Item<list<string>, string>*& last)->bool {return first->key < last->key; });
 
 
 	//now lets print everything
-	for_each(sorted.begin(), sorted.end(), [](Item<list<string>, string>& cur)->void
+	for_each(sorted.begin(), sorted.end(), [](Item<list<string>, string>*& cur)->void
 		{
-			cout << cur.key << ": ";
+			cout << cur->key << ": ";
 			
 			//use inner for_each for the list itself
-			for_each(cur.data.begin(), cur.data.end(), [](string& dat)->void
+			for_each(cur->data.begin(), cur->data.end(), [](string& dat)->void
 				{
 					cout << dat << ' ';
 				});
