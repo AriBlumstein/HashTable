@@ -58,7 +58,7 @@ void HSubject::print()const
 	{
 		if (arr[x].flag == full)
 		{
-			sorted.push_back(&arr[x]);
+			sorted.push_back(arr+x);
 		}
 	}
 
